@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Lenis from "@studio-freight/lenis";
 
+// Now Responsive
 const ImageSequence = () => {
   const canvasRef = useRef(null);
   const lenisRef = useRef(null);
@@ -85,37 +86,38 @@ const ImageSequence = () => {
       smooth: true,
       duration: 1.2,
     });
-
+    
     function raf(time) {
       lenisRef.current.raf(time);
-
+      
       const scrollTop = lenisRef.current.scroll;
       const maxScroll =
         document.documentElement.scrollHeight - window.innerHeight;
-
-      const progress = Math.max(
-        0,
-        Math.min(1, scrollTop / maxScroll)
-      );
-
-      imageSeq.frame = Math.min(
-        frameCount - 1,
+        
+        const progress = Math.max(
+          0,
+          Math.min(1, scrollTop / maxScroll)
+        );
+        
+        imageSeq.frame = Math.min(
+          frameCount - 1,
         Math.floor(progress * (frameCount - 1))
       );
-
+      
       render();
-
+      
       animationRef.current = requestAnimationFrame(raf);
     }
-
+    
     animationRef.current = requestAnimationFrame(raf);
-
+    
     return () => {
       window.removeEventListener("resize", resizeCanvas);
       lenisRef.current?.destroy();
       cancelAnimationFrame(animationRef.current);
     };
   }, []);
+
 
   return (
     <>
