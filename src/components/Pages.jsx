@@ -32,7 +32,6 @@ const Pages = () => {
         start: "top 50%",
         end: "50% 0%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -56,7 +55,6 @@ const Pages = () => {
         start: "-10% 50%",
         end: "40% 0%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -82,7 +80,6 @@ const Pages = () => {
         start: "-80% 0%",
         end: "10% 0%",
         scrub: 1,
-        markers: true,
       },
     });
 
@@ -105,7 +102,6 @@ const Pages = () => {
           start: "-20% 50%",
           end: "-20% 19%",
           scrub: 1,
-          markers: true,
         },
     });
 
